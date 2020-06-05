@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>壮瑶文化旅游推荐——了解壮瑶</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="../css/animate.css">
+
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+
+    <link rel="stylesheet" href="../css/aos.css">
+
+    <link rel="stylesheet" href="../css/ionicons.min.css">
+
+    <link rel="stylesheet" href="../css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="../css/jquery.timepicker.css">
+
+
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <link rel="stylesheet" href="../css/icomoon.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a href="/travel/index" class="nav-link">欢迎页</a></li>
+                <li class="nav-item"><a href="/travel/main" class="nav-link">主页</a></li>
+                <li class="nav-item active"><a href="/travel/curlture" class="nav-link">了解壮瑶</a></li>
+                <li class="nav-item"><a href="/travel/blog" class="nav-link">旅游文章</a></li>
+                <li class="nav-item"><a href="/travel/about" class="nav-link">关于本站</a></li>
+                <th:block th:unless="${session.userNow==null}">
+                    <li class="nav-item"><a href="/travel/manage-index" class="nav-link" th:text="${session.userNow.u_realname}+' - 个人空间'"></a></li>
+                </th:block>
+                <th:block th:if="${session.userNow==null}">
+                    <li class="nav-item"><a href="/travel/login" class="nav-link" >登  录</a></li>
+                </th:block>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- END nav -->
+
+<div class="hero-wrap js-fullheight" style="background-image: url('/images/bg_4.jpg');">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
+            <div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">了解壮瑶文化&amp; 历史发展</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="ftco-section ftco-degree-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 ftco-animate" style="color: black;">
+                <h2 class="mb-3">&nbsp;&nbsp;&nbsp;&nbsp;壮族简介</h2>
+                <p style="font-size: 20px;">&nbsp;&nbsp;壮族,旧称僮（zhuàng）族，是中国人口最多的一个少数民族，民族语言为壮语，属汉藏语系壮侗语族壮傣语支。壮族源于先秦秦汉时期汉族史籍所记载的居住在岭南地区的“西瓯”、“骆越”等，在全国的31个省、自治区、直辖市中均有壮族分布，主要聚居在南方，范围东起广东省连山壮族瑶族自治县，西至云南省文山壮族苗族自治州，北达贵州省黔东南苗族侗族自治州从江县，南抵北部湾。广西壮族自治区是壮族的主要分布区。</p>
+                <p style="text-align: center;">
+                    <img src="/nation1/zhuang-1.jpg" alt="" class="img-fluid">
+                </p>
+                <p style="font-size: 20px;">&nbsp;&nbsp;壮族在中国的31个省、自治区、直辖市中均有分布，主要聚居在南方，范围东起广东省连山壮族瑶族自治县，西至云南省文山壮族苗族自治州，北达贵州省黔东南苗族侗族自治州从江县，南抵北部湾。广西壮族自治区是壮族的主要分布区，共有1420.71万人（2000年），占壮族总人口的87.81%，主要聚居于南宁市、崇左市、百色市、河池市、柳州市、来宾市、贵港市等地。另外，分布在云南省文山壮族苗族自治州的有98.1万人（2000年），散居在云南省其他地区的有12.9万人（2000年）；广东省连山壮族瑶族自治县有4.2万人（2000年），另有4000余人（2000年）居住在与连山毗邻的怀集县下帅壮族瑶族乡；贵州省黔东南苗族侗族自治州从江县有1.6万人（2000年）；湖南省江华瑶族自治县有5000余人（2000年）。壮族居住的地方，基本上连接成一片，大部分聚居，也有相当一部分和汉、瑶、苗、侗、仫佬、毛南、水等族杂居</p>
+                <h2 class="mb-3 mt-5">壮族文化简介</h2>
+                <h4>&nbsp;&nbsp;&nbsp;&nbsp;信仰</h4>
+                <p style="font-size: 20px;">&nbsp;&nbsp;壮族民间信仰多神，崇拜天神、雷神、土地神、巨石神、树神、蛙神、花婆神以及祖先神灵等。魏晋以后，随着道教和佛教先后传入壮族地区，壮族宗教信仰体系在其影响下发生了变异，形成以原始的麽教为主，融道教和佛教为一体，信仰多神的“宗教”，并出现了半职业性神职人员——师公。师公有较完整的教规和组织，但无道教那样严格的修行仪轨，其职能是为民间祈福禳灾，驱鬼事神；所行法事兼具巫、道、释的特点。与此同时，汉族道教的正一道和太一道在壮族地区也有所流行，其神职人员壮语称道公，因其专事念经符咒而少解经文，故民间又称“喃嗼先生”。道公对道教的教义和教规虽有遵从，但也已经过壮族本土宗教文化的改造而具有方士性质。道公无固定寺院，多以设坛组班的形式进行临时性的法事活动，其祀奉神祗除道教所特有者外，也加进了佛教和壮族本土神。</p>
+                <p style="text-align: center;">
+                    <img src="/nation1/zhuang-2.jpg" alt="" class="img-fluid">
+                </p>
+                <h4>&nbsp;&nbsp;&nbsp;&nbsp;饮食</h4>
+                <p style="font-size: 20px;">&nbsp;&nbsp;壮族是最早栽培和种植水稻的民族之一，稻作文化十分发达，稻米也自然成为壮族人民的主食。稻米制作方法多种多样，有蒸、煮、炒、焖、炸等，各种米饭、米粥、米粉、米糕、糍粑、粽子、汤圆等，是壮族人民日常喜爱的食品。如果掺和其他材料，还可以制成许多更加味美营养的食品，如八宝饭、八宝粥、竹筒饭、南瓜饭、“彩色糯米饭”等。 居住在干旱山区的壮族，由于不宜种植水稻，则以玉米为主食。 壮族人民喜食水产，鱼蛤螺蚌，皆为珍味；山林中的菌果、蝉、蛇、禽、兽，也是壮族人民的日常佳肴。 嚼槟榔是壮族的传统习俗，今广西龙州等地的壮族妇女仍有此喜好。有些地方，槟榔是招待客人的必需品</p>
+                <h4>&nbsp;&nbsp;&nbsp;&nbsp;建筑</h4>
+                <p style="font-size: 20px;">&nbsp;&nbsp;壮族住房多数与当地汉族相同。广西西南和西北部分地区的壮族 村寨，还保持着古老的传统住房形式“干栏”，又称“麻栏”。分上下两层，上面住人，下面关养牲畜和存放杂物。 这种住房形式，是古代百越民族的住房特点，已有数千年的历史。因为它具有适应于南方山区地形、气候和预防毒蛇猛兽侵扰的优点，所以一直延用到现代。 随着时代的发展，德保、靖西、巴马等地方的房屋虽然已经朝着现代居室方向发展，为砖石或钢筋混凝土构造，但一些房屋的结构还保留着干栏的基本特征。 龙胜各族自治县的龙脊壮族聚居区的“干栏”式建筑，是保留至今最为完整的。</p>
+                <h4>&nbsp;&nbsp;&nbsp;&nbsp;服饰</h4>
+                <p style="font-size: 20px;">&nbsp;&nbsp;壮族的服装，大部分和汉族相同 ，但在桂西乡村中，尤其是中老年妇女，还保存着自己民族服装的特点。如广西西北部，中老年壮族妇女多穿无领、左衽、绣花滚边的衣服和滚边、宽脚的裤子，腰间束绣花围腰，下身穿褶裙和绣花鞋，喜戴银首饰；广西西南部龙州、凭祥一带的壮族妇女，至今仍穿着无领、左衽的黑色上衣，头上包成方块形状的黑帕，下身穿黑色宽脚裤子。 古代壮族曾流行过文身、凿齿等习俗。唐代文学家柳宗元就曾提到柳州峒民（壮族古称之一）尽是文身人。宋代史书《太平寰宇记》也记载说今贵港市一带的妇女出嫁时要凿去一颗牙齿，古称“凿齿”。现在，这些风俗只在偏远的局部地区有零星流传。</p>
+                <h4>&nbsp;&nbsp;&nbsp;&nbsp;节日</h4>
+                <p style="font-size: 20px;">&nbsp;&nbsp;三月三歌节<br>壮族每年有数次定期的民歌集会，其中以“三月三”歌节最为隆重。 壮族一向以能歌著称，壮族民歌形式、内容丰富多彩，有二三句的，也有三四句以至更多的；流行七字句和腰脚韵。有盘歌、哭嫁歌、贺新居歌、生活歌、农事歌、时政歌、历史歌，等等。壮歌的特点是善于触景生情，托物取喻，以猜谜、盘问的形式，唱出有声有色、动人心弦的歌词。 壮族有定期聚会唱歌的传统，唱歌的地点也比较固定，这种集体唱歌的特定场所叫“歌圩”。其源于先民们祭祀神灵祈求生育和丰收的宗教活动，而后逐步演变成为青年男女定期聚集原野，“以歌代言”、“以歌择偶”的一种社交活动，又进而发展成为群众性的游乐节日。 每到圩日，远近几十里内的男女老少，都盛装汇集于此，享受自己民族的狂欢节。1984年，广西壮族自治区人民政府正式将农历三月初三这一天定为壮族的全民性节日——“三月三”歌节。</p>
+                <p style="text-align: center;">
+                    <img src="/nation1/zhuang-3.jpg" alt="" class="img-fluid">
+                </p>
+                <p style="font-size: 20px;">&nbsp;&nbsp;牛魂节<br>
+                “牛魂节”，又称“牛王节”、“开秧节”。多在春耕以后的一天进行，有的地区固定于农历四月初八进行，因为相传这一天是牛王的诞辰。传说牛王原来是一位天神，奉玉帝之命下凡帮助人们耕作。人们感激他的功劳，便在其诞辰祭祀牛魂。这一天，各家各户都将牛梳洗一番，并修整牛栏，带着一篮五色糯米饭和一束鲜草，到牛栏旁边祭牛魂，然后把一半食品及鲜草分给每头耕牛吃。</p>
+                <p style="font-size: 20px;">&nbsp;&nbsp;中元节<br>农历七月十四日的“中元节”，又称“鬼节”、“敬祖节”，是仅次于春节的大节日，主要内容是祭祖和祀鬼。这天，家家户户杀鸡宰鸭，蒸糕做馍，并用彩色纸裁成四季衣裤，以备祭祀之用。白天在家祭祀祖先之后，入夜还要到山角河边，进行野祭，燃香点烛，焚烧纸衣，祈求野鬼别来作祟。</p>
+                <p style="font-size: 20px;">&nbsp;&nbsp;陀螺节<br>在广西壮族聚居的地方，每年都举行一次有名的体育盛会——陀螺节。时间是由旧历年除夕前两三天至新年正月十六日，历时半个多月。</p>
+                <p style="font-size: 20px;">&nbsp;&nbsp;吃立节<br>吃立节，是广西壮族自治区龙州县、凭祥市一带壮族人民特有的节日。“吃立”壮语意为“欢庆”。壮族人民素有欢度春节的传统。但在1894年春节来临之际，法国侵略者侵略我边境，为了打击侵略者，青壮年奔赴疆场，英勇杀敌，保卫了家园。正月三十日，出征的将士凯旋归来，乡亲们杀鸡宰羊，做糯米粑，盛情款待，共同欢庆胜利，补过春节。从此以后逐渐形成吃立节。节日期间，人们舞狮子、耍龙灯、唱歌跳舞，热闹非凡。</p>
+
+                <h2 class="mb-3">&nbsp;&nbsp;&nbsp;&nbsp;瑶族简介</h2>
+                <p style="font-size: 20px;">瑶族，中国最古老的民族之一，民族语言分属汉藏语系苗瑶语族瑶语支、汉藏语系苗瑶语族苗语支、汉藏语系壮侗语族侗水语支。 瑶族是古代东方“九黎”中的一支，是中国华南地区分布最广的少数民族，是中国最长寿的民族之一，传说瑶族为盘瓠和帝喾之女三公主的后裔。</p>
+                <p style="text-align: center;">
+                    <img src="/nation2/yai-1.jpg" alt="" class="img-fluid">
+                </p>
+                <p style="font-size: 20px;">&nbsp;&nbsp;瑶族广泛分布在亚、欧、美、澳等各大洲，民族主体在中国，分布在广西、湖南、广东、云南、贵州和江西五省（区）的130多个县里，其中以广西为最多，根据2010年第六次全国人口普查统计，瑶族人口数为2796003人</p>
+                <h2 class="mb-3 mt-5">瑶族文化简介</h2>
+                <h4>&nbsp;&nbsp;&nbsp;&nbsp;信仰</h4>
+                <p style="font-size: 20px;">&nbsp;&nbsp;瑶族人民的信仰属于多神崇拜。过去，瑶族认为万物有灵，对自然虔诚膜拜，祭礼寨神、家神、水神、风神、雨神、雷神、树神、山神等，每逢年节都要上香。对生产中的每一个过程，诸如狩猎、砍山、采集、耕地、播种、插秧、收割、建谷仓、吃新米等等，都要请师公占卦选吉日，举行祭祀。盘瑶和山子瑶主要在山岭上耕作，他们认为山都由山神掌管，必须敬奉山神才有收获，故在围猎野猪、山羊、黄猄等糟踏农作物的野兽时，先由师公或道公喃神，祈求山神保佑他们猎得野兽，以保护农作物，获得猎物后，必须先用兽头祭过山神，而后方能分配。</p>
+                <p style="text-align: center;">
+                    <img src="/nation2/yai-2.jpg" alt="" class="img-fluid">
+                </p>
+                <h4>&nbsp;&nbsp;&nbsp;&nbsp;饮食</h4>
+                <p style="font-size: 20px;">&nbsp;&nbsp;瑶族以玉米、稻米为主食。 岭南四季温暖，适宜蔬菜生长，园圃冬夏常青，人们终年都可以吃到鲜嫩的蔬菜有芥菜、白菜、萝卜、辣椒、茄子等；瓜豆类有南瓜、黄瓜、冬瓜、豆角、黄豆、饭豆等；肉类主要有猪肉、鸡肉、鸭肉、牛肉、羊肉等；油类有猪油、花生油、茶油、火麻油、向日葵籽油等。大部分瑶族有忌食狗肉的习惯，即使煮食，也必须在屋外进行。</p>
+                <h4>&nbsp;&nbsp;&nbsp;&nbsp;建筑</h4>
+                <p style="font-size: 20px;">&nbsp;&nbsp;瑶族是个山居民族，其村落大多位于海拔1000米左右的高山密林中，一般建在山顶、半山腰和山脚溪畔。 新中国成立之前，边远山区瑶族大部分住竹舍、木屋和茅屋，相当一部分还住“人字棚”，只有很少部分住砖瓦屋。 瑶族房屋建筑主要有四种形式：横宽式、杆栏式、曲线长廊式和直线长廊式。广西金秀大瑶山坳瑶的传统房屋富有特色，房屋正门有阴阳二门，平时只开阳门，供人出入，阴门紧闭。遇有丧事和家内祭祀时，阴门方打开，供出殡和亡魂进出。</p>
+                <h4>&nbsp;&nbsp;&nbsp;&nbsp;服饰</h4>
+                <p style="font-size: 20px;">&nbsp;&nbsp;瑶族男女，喜蓄长发。古籍中就有瑶人男女蓄发，盘结头顶，名为“椎髻”的记载。据汉文史籍所述，早在《后汉书》中就有瑶族的先人“好五色衣服”的记载。以后的史籍也载有瑶族人民“椎发跣足，衣斑斓布”。到近代，瑶族服装样式也还是十分丰富多彩。男子上衣有对襟及左大襟两种，一般均束腰带。裤子长短不一，有的长及脚面，有的却短至膝盖，大都以蓝、黑色为主。瑶族妇女服装，各地也不一样。有的上穿无领短衣，以带系腰，下着长短不等的裙子；有的着长可及膝的对襟上衣，腰束长带，下穿长裤或短裙。有的在衣领、衣袖与长裤裤脚上还绣有各种美丽的彩色图案。</p>
+                <h4>&nbsp;&nbsp;&nbsp;&nbsp;节日</h4>
+                <p style="font-size: 20px;">&nbsp;&nbsp;瑶族的传统节日很多，小节几乎每月都有，各地过得也不尽相同。大节日有春节、清明、社节、盘王节、“祝著节”、“耍望节”等。</p>
+                <p style="text-align: center;">
+                    <img src="/nation2/yai-3.jpg" alt="" class="img-fluid">
+                </p>
+                <p style="font-size: 20px;">&nbsp;&nbsp;盘王节<br>盘王节又称“做盘王”、“还盘王愿”、“跳盘王”，是盘瑶纪念始祖“盘王”的盛大传统节日，20世纪80年代前一般在秋后至春节前的农闲期间，定期或不定期地举行。1984年将全国瑶族过盘王节的日期统一定在每年农历十月十六日。</p>
+                <p style="font-size: 20px;">&nbsp;&nbsp;祝著节<br>祝著节是广西布努瑶纪念始祖母密洛陀生日的节日，非常热烈隆重。人们以农历五月二十九日为正日，敲打铜鼓，欢庆三天。耍望节每三、五年举行一次，一般在农历十月十六日前后举行，是青年男女对歌求爱的日子</p>
+
+                <h5 style="background-color: #E14311;">点击标签查看具体介绍↓↓↓</h5>
+                <div class="tag-widget post-tag-container mb-8 mt-8">
+                    <div class="tagcloud">
+                        <a  style="font-size: 20px;" href="/travel/nation-zhuang" target="_blank" class="tag-cloud-link">壮族文化</a>
+                        <a  style="font-size: 20px;" href="/travel/nation-yao" target="_blank" class="tag-cloud-link">瑶族文化</a>
+                    </div>
+                </div>
+
+            </div> <!-- .col-md-8 -->
+            <div class="col-md-4 sidebar ftco-animate">
+
+                <div class="sidebar-box ftco-animate">
+                    <h3>图文推荐</h3>
+                    <div class="block-21 mb-4 d-flex">
+                        <a class="blog-img mr-4" style="background-image: url(/nation1/1001.jpg);"></a>
+                        <div class="text">
+                            <h3 class="heading"><a href="/travel/nation-z-single?nation_id=7001">壮族传统建筑及居住禁忌</a></h3>
+                            <div class="meta">
+                                <div><a href=""><span class="icon-calendar"></span> 2020.02.03</a></div>
+                                <div><a href=""> 19浏览</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-21 mb-4 d-flex">
+                        <a class="blog-img mr-4" style="background-image: url(/nation1/1011.jpg);"></a>
+                        <div class="text">
+                            <h3 class="heading"><a href="/travel/nation-z-single?nation_id=7002">壮族地区韵味丰厚的民俗风情</a></h3>
+                            <div class="meta">
+                                <div><a href="#"><span class="icon-calendar"></span> 2020.02.03</a></div>
+                                <div><a href="#"> 29浏览</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-21 mb-4 d-flex">
+                        <a class="blog-img mr-4" style="background-image: url(/nation2/pic1.jpg);"></a>
+                        <div class="text">
+                            <h3 class="heading"><a href="/travel/nation-y-single?nation_id=8001">瑶族关于预兆的观念与禁忌</a></h3>
+                            <div class="meta">
+                                <div><a href=""><span class="icon-calendar"></span> 2020.02.03</a></div>
+                                <div><a href=""> 13浏览</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-21 mb-4 d-flex">
+                        <a class="blog-img mr-4" style="background-image: url(/nation2/pic2.jpg);"></a>
+                        <div class="text">
+                            <h3 class="heading"><a href="/travel/nation-y-single?nation_id=8002">瑶族人的宗教与信仰</a></h3>
+                            <div class="meta">
+                                <div><a href="#"><span class="icon-calendar"></span> 2020.02.03</a></div>
+                                <div><a href="#"> 22浏览</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section> <!-- .section -->
+
+<footer class="ftco-footer ftco-bg-dark ftco-section">
+    <div class="container">
+        <div class="row mb-5">
+            <div  align="center" class="col-md">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">网站制作方</h2>
+                    <div class="block-23 mb-3">
+                        <ul>
+                            <li><span class="icon icon-map-marker"></span><span class="text">桂林电子科技大学花江校区</span></li>
+                            <li><a href="#"><span class="icon icon-phone"></span><span class="text">0773-1234565</span></a></li>
+                            <li><a href="#"><span class="icon icon-envelope"></span><span class="text">98786543@qq.com</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+
+                <p></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery-migrate-3.0.1.min.js"></script>
+<script src="../js/popper.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/jquery.easing.1.3.js"></script>
+<script src="../js/jquery.waypoints.min.js"></script>
+<script src="../js/jquery.stellar.min.js"></script>
+<script src="../js/owl.carousel.min.js"></script>
+<script src="../js/jquery.magnific-popup.min.js"></script>
+<script src="../js/aos.js"></script>
+<script src="../js/jquery.animateNumber.min.js"></script>
+<script src="../js/bootstrap-datepicker.js"></script>
+<script src="../js/jquery.timepicker.min.js"></script>
+<script src="../js/scrollax.min.js"></script>
+<script src="../js/google-map.js"></script>
+<script src="../js/main.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>个人主页</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="templatemo">
+
+    <link href="/manage/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/manage/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/manage/css/templatemo-style.css" rel="stylesheet">
+
+
+
+</head>
+<body>
+
+<!-- Left column -->
+<div class="templatemo-flex-row">
+    <div class="templatemo-sidebar">
+        <header class="templatemo-site-header">
+            <div class="square"></div>
+            <h1 th:text="${session.userNow.u_realname}+',您好！'">个人空间</h1>
+        </header>
+        <div class="profile-photo-container">
+            <img th:src="${session.userNow.u_headimg}" alt="Profile Photo" class="img-responsive">
+            <div class="profile-photo-overlay"></div>
+        </div>
+        <!-- Search box -->
+        <form class="templatemo-search-form" role="search">
+            <div class="input-group">
+                <button type="submit" class="fa fa-search"></button>
+                <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+            </div>
+        </form>
+        <div class="mobile-menu-icon">
+            <i class="fa fa-bars"></i>
+        </div>
+        <nav class="templatemo-left-nav">
+            <ul>
+                <li><a href="/travel/manage-index" class="active"><i class="fa fa-home fa-fw"></i>个人主页</a></li>
+                <li><a href="/travel/manage-publish"><i class="fa fa-pencil fa-fw"></i>发表博客</a></li>
+                <li><a href="/travel/manage-blog"><i class="fa fa-history fa-fw"></i>浏览记录</a></li>
+                <li><a href="/travel/manage-prefer"><i class="fa fa-sliders fa-fw"></i>信息设置</a></li>
+                <li><a href="/travel/logout"><i class="fa fa-eject fa-fw"></i>注销</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- Main content -->
+    <div class="templatemo-content col-1 light-gray-bg">
+        <div class="templatemo-top-nav-container">
+            <div class="row">
+                <nav class="templatemo-top-nav col-lg-12 col-md-12">
+                    <ul class="text-uppercase">
+<!--                        <li><a href="/travel/index" class="active">Admin panel</a></li>-->
+                            <li><a href="/travel/index">回到首页</a></li>
+<!--                        <li><a href="">Overview</a></li>-->
+<!--                        <li><a href="login.html">Sign in form</a></li>-->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="templatemo-content-container">
+            <div class="templatemo-flex-row flex-content-row">
+                <div class="templatemo-content-widget white-bg col-2">
+                    <i class="fa fa-times"></i>
+                    <div class="square"></div>
+                    <h2 class="templatemo-inline-block">公 告 信 息</h2><hr>
+                    <p style="font-size: 20px;" th:text="${mmsgFirst.m_msg}"></p>
+                </div>
+                <div class="templatemo-content-widget white-bg col-1 text-center">
+                    <i class="fa fa-times"></i>
+                    <h2 class="text-uppercase">导 语</h2>
+                    <h3 class="text-uppercase margin-bottom-10">今天又是阳光明媚的一天</h3>
+                    <img src="/manage/images/bicycle.jpg" alt="Bicycle" class="img-circle img-thumbnail">
+                </div>
+                <div class="templatemo-content-widget white-bg col-1">
+                    <i class="fa fa-times"></i>
+                    <h2 class="text-uppercase">统 计</h2>
+                    <h3 class="text-uppercase">用户数据统计</h3><hr>
+                    <a>浏览量</a>
+                    <div class="progress">
+                        <div th:text="${usData1}" class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">878</div>
+                    </div>
+                    <a>发布量</a>
+                    <div class="progress">
+                        <div th:text="${usData2}"  class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">786</div>
+                    </div>
+                    <a>评论量</a>
+                    <div class="progress">
+                        <div th:text="${usData3}" class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">34</div>
+                    </div>
+                </div>
+            </div>
+            <h2 align="center">用户与管理员互动</h2>
+            <div class="templatemo-flex-row flex-content-row templatemo-overflow-hidden"> <!-- overflow hidden for iPad mini landscape view-->
+                <div class="col-1 templatemo-overflow-hidden">
+                    <div class="templatemo-content-widget white-bg templatemo-overflow-hidden">
+                        <i class="fa fa-times"></i>
+                        <div class="templatemo-flex-row flex-content-row">
+                            <div class="col-1 col-lg-6 col-md-12">
+                                <h2 class="text-center">用户提问<span class="badge">new</span></h2>
+                                <div id="pie_chart_div" class="templatemo-chart">
+                                    <br>
+                                    <div th:each="useEach : ${userAsk}">
+                                        <h2 align="center" th:text="${useEach.m_title}+' : '+${useEach.m_msg}"></h2>
+                                    </div>
+                                </div> <!-- Pie chart div -->
+                            </div>
+                            <div class="col-1 col-lg-6 col-md-12">
+                                <h2 class="text-center">管理员回答<span class="badge">new</span></h2>
+                                <div id="bar_chart_div" class="templatemo-chart">
+                                    <br>
+                                    <div th:each="useEach : ${userAsk}">
+                                        <h2 align="center" th:text="${useEach.m_mark}"></h2>
+                                    </div>
+                                </div> <!-- Bar chart div -->
+                            </div>
+                        </div>
+                    </div>
+                    <form action="/travel/userAsk" style="text-align: center">
+                        <input type="text" style="height: 36px; width: 500px;" name="askcontent">
+                        <input type="submit" class="templatemo-blue-button"></input>
+                    </form>
+                </div>
+            </div>
+            <br>
+            <br>
+            <h2 align="center">用户与智能问答系统互动</h2>
+            <a href="/travel/answeruser" target="_blank" style="font-size: 25px;">点击进入智能问答模块页面...</a>
+            <footer class="text-right">
+                <p><a href="" target="_parent"></a></p>
+            </footer>
+        </div>
+    </div>
+</div>
+
+<!-- JS -->
+<script src="/manage/js/jquery-1.11.2.min.js"></script>      <!-- jQuery -->
+<script src="/manage/js/jquery-migrate-1.2.1.min.js"></script> <!--  jQuery Migrate Plugin -->
+<script>
+    /* Google Chart
+    -------------------------------------------------------------------*/
+    // Load the Visualization API and the piechart package.
+    google.load('visualization', '1.0', {'packages':['corechart']});
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(drawChart);
+
+    // Callback that creates and populates a data table,
+    // instantiates the pie chart, passes in the data and
+    // draws it.
+    function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+            ['Mushrooms', 3],
+            ['Onions', 1],
+            ['Olives', 1],
+            ['Zucchini', 1],
+            ['Pepperoni', 2]
+        ]);
+
+        // Set chart options
+        var options = {'title':'How Much Pizza I Ate Last Night'};
+
+        // Instantiate and draw our chart, passing in some options.
+        var pieChart = new google.visualization.PieChart(document.getElementById('pie_chart_div'));
+        pieChart.draw(data, options);
+
+        var barChart = new google.visualization.BarChart(document.getElementById('bar_chart_div'));
+        barChart.draw(data, options);
+    }
+
+    $(document).ready(function(){
+        if($.browser.mozilla) {
+            //refresh page on browser resize
+            // http://www.sitepoint.com/jquery-refresh-page-browser-resize/
+            $(window).bind('resize', function(e)
+            {
+                if (window.RT) clearTimeout(window.RT);
+                window.RT = setTimeout(function()
+                {
+                    this.location.reload(false); /* false to get page from cache */
+                }, 200);
+            });
+        } else {
+            $(window).resize(function(){
+                drawChart();
+            });
+        }
+    });
+
+</script>
+<script type="text/javascript" src="/manage/js/templatemo-script.js"></script>      <!-- Templatemo Script -->
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>管理旅游景点信息</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="templatemo">
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>
+    <link href="/manage/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/manage/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/manage/css/templatemo-style.css" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- Left column -->
+<div class="templatemo-flex-row">
+    <div class="templatemo-sidebar">
+        <header class="templatemo-site-header">
+<!--            <div class="square"></div>-->
+            <h1 th:text="${session.adminNow.getM_realname()}+',您好！'">管理员首页</h1>
+        </header>
+        <div class="profile-photo-container">
+            <img th:src="${session.adminNow.getM_headimg()}" alt="Profile Photo" class="img-responsive">
+            <div class="profile-photo-overlay"></div>
+        </div>
+        <!-- Search box -->
+        <form class="templatemo-search-form" role="search">
+            <div class="input-group">
+                <button type="submit" class="fa fa-search"></button>
+                <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+            </div>
+        </form>
+        <div class="mobile-menu-icon">
+            <i class="fa fa-bars"></i>
+        </div>
+        <nav class="templatemo-left-nav">
+            <ul>
+                <li><a href="/travel/admin-index"><i class="fa fa-institution fa-fw"></i>公告信息管理</a></li>
+                <li><a href="/travel/admin-travel" class="active"><i class="fa fa-table fa-fw"></i>旅游信息管理</a></li>
+                <li><a href="/travel/admin-blog"><i class="fa fa-table fa-fw"></i>博客信息管理</a></li>
+                <li><a href="/travel/admin-publish"><i class="fa fa-pencil fa-fw"></i>发布旅游景点信息</a></li>
+                <li><a href="/travel/admin-nation" ><i class="fa fa-pencil fa-fw"></i>发布民族文化信息</a></li>
+                <li><a href="/travel/admin-user"><i class="fa fa-users fa-fw"></i>用户管理</a></li>
+                <li><a href="/travel/admin-examine"><i class="fa fa-bookmark fa-fw"></i>审核博客</a></li>
+                <li><a href="/travel/admin-prefer" ><i class="fa fa-pencil fa-fw"></i>修改管理员信息</a></li>
+                <li><a href="/travel/adminlogout"><i class="fa fa-eject fa-fw"></i>注销</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- Main content -->
+    <div class="templatemo-content col-1 light-gray-bg">
+        <div class="templatemo-top-nav-container">
+        </div>
+        <div class="templatemo-content-container">
+            <h1 align="center">&nbsp;旅&nbsp;游&nbsp;景&nbsp;点&nbsp;信&nbsp;息&nbsp;</h1>
+            <div class="templatemo-content-widget no-padding">
+                <div class="panel panel-default table-responsive">
+                    <table class="table table-striped table-bordered templatemo-user-table">
+                        <thead>
+                        <tr>
+                            <td><a href="" class="white-text templatemo-sort-by">   ID  <span class="caret"></span></a></td>
+                            <td><a href="" class="white-text templatemo-sort-by">标&nbsp;&nbsp;题<span class="caret"></span></a></td>
+                            <td><a href="" class="white-text templatemo-sort-by">景区城市<span class="caret"></span></a></td>
+                            <td><a href="" class="white-text templatemo-sort-by">点击量<span class="caret"></span></a></td>
+                            <td><a href="" class="white-text templatemo-sort-by">开放时间<span class="caret"></span></a></td>
+                            <td>操作</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="ubrows : ${adminTravel}">
+                            <td th:text="${ubrows.t_id}"> ID </td>
+                            <td><a th:text="${ubrows.t_name}"  th:href="@{'/travel/mainsingle?trave_id=' + ${ubrows.t_id}}" target="_blank" >标题</a></td>
+                            <td th:text="${ubrows.t_city}">景区城市</td>
+                            <td th:text="${ubrows.t_clicked}">点击量</td>
+                            <td th:text="${ubrows.t_uptime}">开放时间</td>
+                            <td><a th:href="@{'/travel/deleteTravelingData?t_id=' + ${ubrows.t_id}}" class="templatemo-link">删除</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- 分页开始 -->
+            <div class="pagination-wrap">
+                <ul class="pagination">
+                    <li>
+                        <a th:href="'/travel/admin-travel?pageNum='+${pageInfo.prePage}" aria-label="Previous">
+                            <span aria-hidden="true"><i class="fa fa-angle-left"></i></span>
+                        </a>
+                    </li>
+                    <li th:each="nav:${pageInfo.navigatepageNums}">
+                        <a th:href="'/travel/admin-travel?pageNum='+${nav}" th:text="${nav}" th:if="${nav != pageInfo.pageNum}"></a>
+                        <span  th:if="${nav == pageInfo.pageNum}" th:text="${nav}" ></span>
+                    </li>
+<!--                    <li><a href="#">1</a></li>-->
+<!--                    <li><a href="#">2</a></li>-->
+<!--                    <li class="active"><a href="#">3 <span class="sr-only">(current)</span></a></li>-->
+<!--                    <li><a href="#">4</a></li>-->
+<!--                    <li><a href="#">5</a></li>-->
+                    <li>
+                        <a th:href="'/travel/admin-travel?pageNum='+${pageInfo.nextPage}" aria-label="Next">
+                            <span aria-hidden="false"><i class="fa fa-angle-right"></i></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <footer class="text-center">
+                <p><a href="" target="_parent"></a></p>
+            </footer>
+        </div>
+    </div>
+</div>
+
+<!-- JS -->
+<script type="text/javascript" src="/manage/js/jquery-1.11.2.min.js"></script>      <!-- jQuery -->
+<script type="text/javascript" src="/manage/js/templatemo-script.js"></script>      <!-- Templatemo Script -->
+<script>
+    $(document).ready(function(){
+        // Content widget with background image
+        var imageUrl = $('img.content-bg-img').attr('src');
+        $('.templatemo-content-img-bg').css('background-image', 'url(' + imageUrl + ')');
+        $('img.content-bg-img').hide();
+    });
+</script>
+
+
+</body>
+</html>

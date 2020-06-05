@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>管 理 员 登  录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Simple Signin Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements"/>
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery-migrate-3.0.1.min.js"></script>
+
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+
+    <script type="text/javascript">
+        $(function(){
+            //点击图片切换验证码
+            $("#vcodeImg").click(function(){
+                this.src="get_cpacha?vl=4&w=160&h=40&t="+new Date().getTime();
+            });
+        })
+    </script>
+
+
+    <!-- Meta tag Keywords -->
+    <!-- css files -->
+    <link rel="stylesheet" href="/login/css/style.css" type="text/css" media="all" />
+    <!-- Style-CSS -->
+    <link rel="stylesheet" href="/login/css/font-awesome.css">
+    <!-- Font-Awesome-Icons-CSS -->
+    <!-- //css files -->
+    <!-- web-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <!-- //web-fonts -->
+</head>
+<body>
+<!--header-->
+<div class="header-w3l">
+    <h1>
+        壮瑶<span>文化</span>旅游<span>推荐</span>系统
+    </h1>
+</div>
+<!--//header-->
+<div class="main-content-agile">
+    <div class="sub-main-w3">
+        <h2>管理员登录系统</h2>
+        <form action="/travel/checkAdminlogin" method="post">
+            <label>账号</label>
+            <div class="pom-agile">
+                <span class="fa fa-user-o" aria-hidden="true"></span>
+                <input placeholder="Username" name="account" class="user" type="text" required="">
+            </div>
+            <label>密码</label>
+            <div class="pom-agile">
+                <span  aria-hidden="true"></span>
+                <input placeholder="Password" name="password" class="pass" type="password" required="">
+            </div>
+            <label>验证码</label>
+            <div>
+                <div class="pom-agile" >
+                    <input name="vcode" type="text" placeholder="请输入验证码" >
+                </div>
+
+                <img title="点击图片切换验证码" id="vcodeImg" src="get_cpacha?vl=4&w=160&h=40" >
+
+            </div>
+            <br/>
+            <div>
+                <a th:align="center" style="color: red" th:text="${adminmsg}">提示信息</a>
+            </div>
+            <div class="right-w3l">
+                <input type="submit" value="登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录">
+            </div>
+            <br/>
+            <div>
+                <a href="/travel/login" style="color: #000000" >普通用户登录</a>
+            </div>
+        </form>
+    </div>
+</div>
+<!--//main-->
+<!--footer-->
+<div class="footer">
+    <p><a href="#"></a>
+    </p>
+</div>
+<!--//footer-->
+
+</body>
+</html>

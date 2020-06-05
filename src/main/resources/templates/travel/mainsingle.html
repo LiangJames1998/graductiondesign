@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>壮瑶文化旅游推荐</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
+    <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+    <meta name="author" content="FREEHTML5.CO" />
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<!--    <link rel="shortcut icon" href="favicon.ico">-->
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic|Roboto:400,300,700' rel='stylesheet' type='text/css'>
+    <!-- Animate -->
+    <link rel="stylesheet" href="/main/css/animate.css">
+    <!-- Icomoon -->
+    <link rel="stylesheet" href="/main/css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="/main/css/bootstrap.css">
+
+    <link rel="stylesheet" href="/main/css/style.css">
+
+    <!-- 天气导航界面 --->
+    <link href="../weather/css/weathstyle.css" rel="stylesheet" type="text/css" media="all"/>
+
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=93b6ff75315d9084a1a47bcb14e6b428"></script>
+
+    <!-- Modernizr JS -->
+    <script src="/main/js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="/main/js/respond.min.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+        .bottom-head {
+            font-size: 25px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+<div id="fh5co-offcanvas">
+    <a href="#" class="fh5co-close-offcanvas js-fh5co-close-offcanvas"><span><i class="icon-cross3"></i> <span>关闭</span></span></a>
+    <div class="fh5co-bio">
+        <figure>
+            <img src="/main/images/person1.jpg" alt="Free HTML5 Bootstrap Template" class="img-responsive">
+        </figure>
+        <h3 class="heading">关于本页</h3>
+        <h2>图片导游</h2>
+        <p>通过精美的旅游图片向您展示丰富的壮瑶旅游文化圣地</p>
+        <ul class="fh5co-social">
+        </ul>
+    </div>
+
+    <div class="fh5co-menu">
+        <div class="fh5co-box">
+            <h3 class="heading">分类</h3>
+            <ul>
+                <li><a href="#">壮瑶</a></li>
+                <li><a href="#">旅游</a></li>
+                <li><a href="#">摄影</a></li>
+                <li><a href="#">文化</a></li>
+                <li><a href="#">交流</a></li>
+            </ul>
+        </div>
+        <div class="fh5co-box">
+            <h3 class="heading">搜索</h3>
+            <form action="/travel/search">
+                <div class="form-group">
+                    <input name="finding" type="text" class="form-control" placeholder="输入感兴趣的事...">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- END #fh5co-offcanvas -->
+<header id="fh5co-header">
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+            <ul class="fh5co-social">
+<!--                <li><a href="#"><i class="icon-twitter"></i></a></li>-->
+<!--                <li><a href="#"><i class="icon-facebook"></i></a></li>-->
+<!--                <li><a href="#"><i class="icon-instagram"></i></a></li>-->
+            </ul>
+            <div class="col-lg-12 col-md-12 text-center">
+                <h1 id="fh5co-logo"><a href="">壮瑶文化旅游胜地</a></h1>
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+<a th:href="@{/travel/mainsingle(trave_id=${traveMeg.t_id}-1)}"  class="fh5co-post-prev"><span><i class="icon-chevron-left"></i> 上一篇</span></a>
+<a th:href="@{/travel/mainsingle(trave_id=${traveMeg.t_id}+1)}" class="fh5co-post-next"><span>下一篇 <i class="icon-chevron-right"></i></span></a>
+<!-- END #fh5co-header -->
+<div class="container-fluid">
+    <div class="row fh5co-post-entry single-entry">
+        <article class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+            <figure class="animate-box">
+                <img th:src="${traveMeg.getT_picture1()}"  style="width: 500px; height: 300px;" align="center" alt="Image">
+            </figure>
+            <span class="fh5co-meta animate-box"><a href=""></a></span>
+            <h2 class="fh5co-article-title animate-box"><a th:text="${traveMeg.t_name}">My First Time Traveling in Vietnam</a></h2>
+<!--            <span class="fh5co-meta fh5co-date animate-box">March 6th, 2016</span>-->
+
+            <div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-left content-article">
+                <div class="row">
+                    <div class="col-lg-8 cp-r animate-box">
+                        <p th:text="${traveMeg.getT_text1()}"></p>
+                    </div>
+                    <div class="col-lg-4 animate-box">
+                        <div class="fh5co-highlight right">
+                            <h3>景区特点</h3>
+                            <p> 优美的壮瑶文化景区，展示壮瑶民族文化的五彩缤纷，百花齐放。 </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row rp-b">
+                    <div class="col-md-12 animate-box">
+                        <blockquote>
+                            <p>&ldquo;城窄山将压，江宽地共浮。东南通绝域，西北有高楼。神护青枫岸，龙移白石湫。殊乡竟何祷，箫鼓不曾休。&rdquo; <cite>&mdash; 李商隐(唐)</cite></p>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <div class="row rp-b">
+                    <div class="col-lg-6 col-md-12 animate-box">
+                        <figure>
+                            <img th:src="${traveMeg.getT_picture1()}" alt="Free HTML5 Bootstrap Template by FREEHTML5.co" class="img-responsive">
+<!--                            <figcaption>This is a sweet image caption. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</figcaption>-->
+                        </figure>
+                    </div>
+                    <div class="col-lg-6 col-md-12 cp-l animate-box">
+                        <p th:text="${traveMeg.getT_text2()}"></p>
+                    </div>
+                </div>
+
+                <div class="row rp-b">
+                    <div class="col-lg-6 col-lg-push-6 col-md-12 col-md-push-0 animate-box">
+                        <figure>
+                            <img th:src="${traveMeg.getT_picture2()}" alt="Free HTML5 Bootstrap Template by FREEHTML5.co" class="img-responsive">
+<!--                            <figcaption>This is a sweet image caption. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</figcaption>-->
+                        </figure>
+                    </div>
+                    <div class="col-lg-6 col-lg-pull-6 col-md-12 col-md-pull-0 cp-r animate-box">
+                        <p th:text="${traveMeg.getT_text3()}"></p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 animate-box">
+                        <h2>更多信息</h2>
+                        <p th:text="${traveMeg.getT_text4()}"></p>
+                    </div>
+                    <div class="col-md-4 animate-box">
+                        <figure>
+                            <img th:src="${traveMeg.t_picture3}" alt="Free HTML5 Bootstrap Template by FREEHTML5.co" style="width: 400px;height: 250px;" class="img-responsive">
+<!--                            <figcaption>This is a sweet image caption. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</figcaption>-->
+                        </figure>
+                    </div>
+                    <div class="col-md-4 animate-box">
+                        <figure>
+                            <img th:src="${traveMeg.t_picture4}" alt="Free HTML5 Bootstrap Template by FREEHTML5.co" style="width: 400px;height: 250px;" class="img-responsive">
+<!--                            <figcaption>This is a sweet image caption. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</figcaption>-->
+                        </figure>
+                    </div>
+                    <div class="col-md-4 animate-box">
+                        <figure>
+                            <img th:src="${traveMeg.t_picture5}" alt="Free HTML5 Bootstrap Template by FREEHTML5.co" style="width: 400px;height: 250px;" class="img-responsive">
+<!--                            <figcaption>This is a sweet image caption. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</figcaption>-->
+                        </figure>
+                    </div>
+                    <div class="col-md-12 animate-box">
+                        <h2>&nbsp;地图指南</h2>
+<!--                        <p>ematic country, in which roasted parts of sentences fly into your mouth.</p>-->
+                        <div id="baidu_map" align="center" style="width: 880px ; height: 450px">加载中,请稍后...</div>
+                        <p></p>
+                        <p th:text="${'景点地址: '+traveMeg.t_city}"></p>
+                        <p th:text="${'营业时间: '+traveMeg.t_uptime}"></p>
+                    </div>
+                    <div class="col-md-12 animate-box">
+                        <h2>天气&nbsp;情况</h2>
+                        <input id="weathId" type="hidden" th:value="${weatherID}" />
+                        <div class="header-bottom">
+                            <div class="header-bottom1">
+                                <div class="header-head">
+                                    <h4 style="font-size: 25px;" id="day1-wea" >多云</h4>
+                                    <img src="../weather/images/cloudy.png" alt="" />
+                                    <h6 id="day1-temp" >20°</h6>
+                                    <div class="bottom-head">
+                                        <p id="day1-date" >今&nbsp;日</p>
+                                        <p id="day1-wind" >风力:<3级</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="header-bottom1 header-bottom2">
+                                <div class="header-head">
+                                    <h4 style="font-size: 25px;"  id="day2-wea"  >Sunny</h4>
+                                    <img src="../weather/images/sunn.png" alt="" />
+                                    <h6 id="day2-temp" >37°</h6>
+                                    <div class="bottom-head">
+                                        <p id="day2-date" >明日</p>
+                                        <p id="day2-wind" >风力:</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="header-bottom1">
+                                <div class="header-head">
+                                    <h4 style="font-size: 25px;" id="day3-wea" >Rainy</h4>
+                                    <img src="../weather/images/rain.png" alt="" />
+                                    <h6 id="day3-temp" >7°</h6>
+                                    <div class="bottom-head">
+                                        <p id="day3-date" >后天</p>
+                                        <p id="day3-wind" >风力:</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="header-bottom1 header-bottom2">
+                                <div class="header-head">
+                                    <h4 style="font-size: 25px;" id="day4-wea"  >Snowy</h4>
+                                    <img src="../weather/images/rain.png" alt="" />
+                                    <h6 id="day4-temp"  >-10°</h6>
+                                    <div class="bottom-head">
+                                        <p id="day4-date" >大后天</p>
+                                        <p id="day4-wind" >风力:</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear"> </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 animate-box">
+                        <h4 id="weath-kips" ></h4>
+                    </div>
+                    <div class="col-md-12 animate-box" >
+
+                        <th:block th:if="${traveMeg.t_picture6 != null}">
+                            <h2>&nbsp;&nbsp;&nbsp;景点视频介绍</h2>
+                            <div style="text-align: center">
+                                <video width="800" height="500" controls="controls" autoplay="autoplay">
+                                    <source th:src="${traveMeg.t_picture6}"  type="video/mp4">
+                                </video>
+                            </div>
+                        </th:block>
+
+                    </div>
+                    <div class="col-md-12 animate-box">
+                        <input id="pX" type="hidden" th:value="${pX}" />
+                        <input id="pY" type="hidden" th:value="${pY}" />
+                    </div>
+                </div>
+
+
+            </div>
+        </article>
+    </div>
+</div>
+
+<footer id="fh5co-footer">
+    <p><small><br><a href="" target="_blank"></a> <a href="" target="_blank"></a></small></p>
+</footer>
+
+<!-- jQuery -->
+<script src="/main/js/jquery.min.js"></script>
+<!-- jQuery Easing -->
+<script src="/main/js/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="/main/js/bootstrap.min.js"></script>
+<!-- Waypoints -->
+<script src="/main/js/jquery.waypoints.min.js"></script>
+<!-- Main JS -->
+<script src="/main/js/main.js"></script>
+
+</body>
+
+<script type="text/javascript">
+
+    //获取经度与纬度
+    var p1 = document.getElementById("pX").value;
+    var p2 = document.getElementById("pY").value;
+
+    //添加地图
+    var map = new BMap.Map("baidu_map");
+    var point = new BMap.Point(p1, p2);
+    map.centerAndZoom(point, 15);  // 初始化地图,设置中心点坐标和地图级别
+
+    map.enableScrollWheelZoom();                  // 启用滚轮放大缩小。
+
+    //添加一个跳跃的点
+    var marker = new BMap.Marker(point);  // 创建标注
+    map.addOverlay(marker);               // 将标注添加到地图中
+    marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+
+    //添加控件
+    var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
+    var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+    var top_right_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_RIGHT, type: BMAP_NAVIGATION_CONTROL_SMALL}); //右上角，仅包含平移和缩放按钮
+    map.addControl(top_left_control);
+    map.addControl(top_left_navigation);
+    map.addControl(top_right_navigation);
+
+    //获取经度与纬度
+    var weath = document.getElementById("weathId").value;
+
+    //请求数据
+    $.ajax({
+        type:"post",
+        url:"/travel/getWeatherForAPI",
+        dataType:"json",
+        data: {
+            weathID : weath
+        },
+        success:function (data) {
+            var orginalData = data.data;
+            //console.log(orginalData.city);
+            document.getElementById("day1-wea").innerHTML = orginalData.forecast[0].type;
+            document.getElementById("day1-temp").innerHTML = (orginalData.forecast[0].low).substring(2) + "—" + (orginalData.forecast[0].high).substring(2);
+            document.getElementById("day1-date").innerHTML = orginalData.forecast[0].date;
+            document.getElementById("day1-wind").innerHTML = orginalData.forecast[0].fengxiang;
+            document.getElementById("day2-wea").innerHTML = orginalData.forecast[1].type;
+            document.getElementById("day2-temp").innerHTML = (orginalData.forecast[1].low).substring(2) + "—" + (orginalData.forecast[1].high).substring(2);
+            document.getElementById("day2-date").innerHTML = orginalData.forecast[1].date;
+            document.getElementById("day2-wind").innerHTML = orginalData.forecast[1].fengxiang;
+            document.getElementById("day3-wea").innerHTML = orginalData.forecast[2].type;
+            document.getElementById("day3-temp").innerHTML = (orginalData.forecast[2].low).substring(2) + "—" + (orginalData.forecast[2].high).substring(2);
+            document.getElementById("day3-date").innerHTML = orginalData.forecast[2].date;
+            document.getElementById("day3-wind").innerHTML = orginalData.forecast[2].fengxiang;
+            document.getElementById("day4-wea").innerHTML = orginalData.forecast[3].type;
+            document.getElementById("day4-temp").innerHTML = (orginalData.forecast[3].low).substring(2) + "—" + (orginalData.forecast[3].high).substring(2);
+            document.getElementById("day4-date").innerHTML = orginalData.forecast[3].date;
+            document.getElementById("day4-wind").innerHTML = orginalData.forecast[3].fengxiang;
+            document.getElementById("weath-kips").innerHTML = orginalData.ganmao;
+        },
+        error:function () {
+            alert("Can not get Data");
+        }
+
+    });
+
+
+
+</script>
+
+</html>

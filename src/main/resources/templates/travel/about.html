@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>关于本站</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="../css/animate.css">
+
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+
+    <link rel="stylesheet" href="../css/aos.css">
+
+    <link rel="stylesheet" href="../css/ionicons.min.css">
+
+    <link rel="stylesheet" href="../css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="../css/jquery.timepicker.css">
+
+
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <link rel="stylesheet" href="../css/icomoon.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a href="/travel/index" class="nav-link">欢迎页</a></li>
+                <li class="nav-item"><a href="/travel/main" class="nav-link">主页</a></li>
+                <li class="nav-item"><a href="/travel/curlture" class="nav-link">了解壮瑶</a></li>
+                <li class="nav-item"><a href="/travel/blog" class="nav-link">旅游文章</a></li>
+                <li class="nav-item active"><a href="/travel/about" class="nav-link">关于本站</a></li>
+                <th:block th:unless="${session.userNow==null}">
+                    <li class="nav-item"><a href="/travel/manage-index" class="nav-link" th:text="${session.userNow.u_realname}+' - 个人空间'"></a></li>
+                </th:block>
+                <th:block th:if="${session.userNow==null}">
+                    <li class="nav-item"><a href="/travel/login" class="nav-link" >登  录</a></li>
+                </th:block>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- END nav -->
+
+<div class="hero-wrap js-fullheight" style="background-image: url('/images/bg_2.jpg');">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
+            <div class="col-md-9 text-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+                <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">主页</a></span> <span>关于本站</span></p>
+                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">关 于 我 们</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="row d-md-flex">
+            <div class="col-md-6 ftco-animate img about-image" style="background-image: url('/images/about.jpg');">
+            </div>
+            <div class="col-md-6 ftco-animate p-md-5">
+                <div class="row">
+                    <div class="col-md-12 nav-link-wrap mb-5">
+                        <div class="nav ftco-animate nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <a class="nav-link active" id="v-pills-whatwedo-tab" data-toggle="pill" href="#v-pills-whatwedo" role="tab" aria-controls="v-pills-whatwedo" aria-selected="true">网站的主要内容</a>
+
+                            <a class="nav-link" id="v-pills-mission-tab" data-toggle="pill" href="#v-pills-mission" role="tab" aria-controls="v-pills-mission" aria-selected="false">我们的任务</a>
+
+                            <a class="nav-link" id="v-pills-goal-tab" data-toggle="pill" href="#v-pills-goal" role="tab" aria-controls="v-pills-goal" aria-selected="false">我们的目标</a>
+                        </div>
+                    </div>
+                    <div class="col-md-12 d-flex align-items-center">
+
+                        <div class="tab-content ftco-animate" id="v-pills-tabContent">
+
+                            <div class="tab-pane fade show active" id="v-pills-whatwedo" role="tabpanel" aria-labelledby="v-pills-whatwedo-tab">
+                                <div>
+                                    <h2 class="mb-4">网站展示的主要内容</h2>
+                                    <p>壮瑶民族文化是我国的少数民族文化中最具有代表的民族文化之一，保护和弘扬民族文化是每个中国人的义务与职责。网站希望通过弘扬壮瑶文化唤醒人们对文化保护的意识。</p>
+                                    <p>用户通过网站的图文并茂的展示效果，查阅认知了解壮瑶文化发展的现状与文化特色，深入了解壮瑶文化发展的旅游圣地。通过旅游民族文化博客文章对民族文化有更深一层的了解。</p>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="v-pills-mission" role="tabpanel" aria-labelledby="v-pills-mission-tab">
+                                <div>
+                                    <h2 class="mb-4">开发人员的任务</h2>
+                                    <p>本网站秉承弘扬传统民族文化的初心，依据多年对旅游市场的调研，认真分析市场规律，与壮族瑶族文化的特性与发展现状。对其进行了深度的分析，将其分为几个主要模块进行对用户的展示。</p>
+                                    <p>通过旅游推荐了解到壮瑶文化发展的的独特魅力之处，旅游推荐展示旅游地点的图片地图位置，与详细说明文章信息，当地未来几天的天气情况。给予用户一定的时间思考前往旅游的可能性。</p>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="v-pills-goal" role="tabpanel" aria-labelledby="v-pills-goal-tab">
+                                <div>
+                                    <h2 class="mb-4">开发人员的共同目标</h2>
+                                    <p>本次网站的制作不是为了盈利，而是为了向广大中国民众展示精美的壮瑶文化，展示壮瑶民族文化的旅游景点圣地，风俗习惯，以及发展的现状，加强民族对本国传统文化的保护意识，不让文化流逝。</p>
+                                    <p>现如今，随着科技文化的发展，壮族瑶族文化也在日新月异的不断发展，慢慢的开始融入社会，逐渐进入人们的视野，呼吁人们加强保护措施，珍惜传统民族文化，自强不息，蓬勃发展。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row justify-content-start mb-5 pb-3">
+            <div class="col-md-7 heading-section ftco-animate">
+<!--                <span class="subheading">QUESTION</span>-->
+                <h2 class="mb-4"><strong>你想知道的</strong> 常见的问题</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 ftco-animate">
+                <div id="accordion">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <a class="card-link" data-toggle="collapse"  href="#menuone" aria-expanded="true" aria-controls="menuone">网站的策划开发者是谁？<span class="collapsed"><i class="icon-plus-circle"></i></span><span class="expanded"><i class="icon-minus-circle"></i></span></a>
+                                </div>
+                                <div id="menuone" class="collapse show">
+                                    <div class="card-body">
+                                        <p>网站由Java开发工程师梁超进行网站的布局，框架搭建，内容策划，代码编写以及后期测试。经过了长达数月的壮瑶文化的采集分类总结，与对市面上大多数网站的相同的，特点，优点的分析之后，权衡利弊最终制作出来的网站，对于想要了解壮瑶文化信息与旅游信息的人群来说，再适合不过了。</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <a class="card-link" data-toggle="collapse"  href="#menutwo" aria-expanded="false" aria-controls="menutwo">网站的旅游景点都是有关壮瑶文化的吗？<span class="collapsed"><i class="icon-plus-circle"></i></span><span class="expanded"><i class="icon-minus-circle"></i></span></a>
+                                </div>
+                                <div id="menutwo" class="collapse">
+                                    <div class="card-body">
+                                        <p>本网站经过数月的探讨与开发，对壮瑶文化的发展现状进行了深度的剖析，对其旅游景点与民族文化习俗，进行了深入的挖掘，通过图文并茂的方式向用户进行展示壮瑶文化的旅游景点圣地，带用户深入了解具体的旅游文化与民族独特的文化习俗</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <a class="card-link" data-toggle="collapse"  href="#menu3" aria-expanded="false" aria-controls="menu3">用户可以自行发表旅游博客或者对博客进行评论吗？<span class="collapsed"><i class="icon-plus-circle"></i></span><span class="expanded"><i class="icon-minus-circle"></i></span></a>
+                                </div>
+                                <div id="menu3" class="collapse">
+                                    <div class="card-body">
+                                        <p>网站对于用户的自由度给予了很大的权限，用户在观看其他用户的优质文章的同时也可以根据自身的旅游情况，或者对自身对于壮瑶文化的感想感触等都可以进行博客的发表，其他用户进行阅读后也可以进行友善的评论，因此加强用户之间的交流。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <a class="card-link" data-toggle="collapse"  href="#menu4" aria-expanded="false" aria-controls="menu4">网站介绍的壮瑶文化是按照哪些方面的？<span class="collapsed"><i class="icon-plus-circle"></i></span><span class="expanded"><i class="icon-minus-circle"></i></span></a>
+                                </div>
+                                <div id="menu4" class="collapse">
+                                    <div class="card-body">
+                                        <p>网站通过数个月的对壮瑶少数民族文化的探讨发掘与爬取，将壮瑶文化分成了几个类别，分别是旅游景点类别介绍，壮族瑶族民族基本简介，壮瑶民族文化的表现形式特点与不同点，壮瑶民族的风俗习惯，基本民族节日。</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <a class="card-link" data-toggle="collapse"  href="#menu5" aria-expanded="false" aria-controls="menu5">网站的推荐内容会随时更新吗？<span class="collapsed"><i class="icon-plus-circle"></i></span><span class="expanded"><i class="icon-minus-circle"></i></span></a>
+                                </div>
+                                <div id="menu5" class="collapse">
+                                    <div class="card-body">
+                                        <p>网站设置有网站管理员登录界面，管理员可以进行登录系统操作并且管理博客信息，旅游景点的发布信息。并且可以根据最新的资讯进行旅游景点信息的删除与新增，管理全部的旅游景点信息与博客信息，获取用户的基本信息。</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <a class="card-link" data-toggle="collapse"  href="#menu6" aria-expanded="false" aria-controls="menu6">网站的浏览需要收费吗？ <span class="collapsed"><i class="icon-plus-circle"></i></span><span class="expanded"><i class="icon-minus-circle"></i></span></a>
+                                </div>
+                                <div id="menu6" class="collapse">
+                                    <div class="card-body">
+                                        <p>本次网站设立之初的目的不是为了盈利，而是为了对现在璀璨壮丽的壮瑶文化进行传扬，让壮瑶文化走进各位用户的内心世界中，弘扬传统民族文化。网站全部免费对用户开发，用户可以尽情的享受壮瑶文化带来的视觉文化冲击，领略壮瑶文化的魅力。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="ftco-footer ftco-bg-dark ftco-section">
+    <div class="container">
+        <div class="row mb-5">
+            <div  align="center" class="col-md">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">网站制作方</h2>
+                    <div class="block-23 mb-3">
+                        <ul>
+                            <li><span class="icon icon-map-marker"></span><span class="text">桂林电子科技大学花江校区</span></li>
+                            <li><a href="#"><span class="icon icon-phone"></span><span class="text">0773-1234565</span></a></li>
+                            <li><a href="#"><span class="icon icon-envelope"></span><span class="text">98786543@qq.com</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery-migrate-3.0.1.min.js"></script>
+<script src="../js/popper.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/jquery.easing.1.3.js"></script>
+<script src="../js/jquery.waypoints.min.js"></script>
+<script src="../js/jquery.stellar.min.js"></script>
+<script src="../js/owl.carousel.min.js"></script>
+<script src="../js/jquery.magnific-popup.min.js"></script>
+<script src="../js/aos.js"></script>
+<script src="../js/jquery.animateNumber.min.js"></script>
+<script src="../js/bootstrap-datepicker.js"></script>
+<script src="../js/jquery.timepicker.min.js"></script>
+<script src="../js/scrollax.min.js"></script>
+<script src="../js/google-map.js"></script>
+<script src="../js/main.js"></script>
+
+
+</body>
+</html>

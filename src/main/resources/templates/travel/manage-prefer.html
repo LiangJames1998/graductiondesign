@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>个人信息</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="templatemo">
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>
+    <link href="/manage/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/manage/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/manage/css/templatemo-style.css" rel="stylesheet">
+
+
+</head>
+<body>
+
+<!-- Left column -->
+<div class="templatemo-flex-row">
+    <div class="templatemo-sidebar">
+        <header class="templatemo-site-header">
+            <div class="square"></div>
+            <h1 th:text="${session.userNow.u_realname}+',您好！'">个人空间</h1>
+        </header>
+        <div class="profile-photo-container">
+            <img th:src="${session.userNow.u_headimg}" alt="Profile Photo" class="img-responsive">
+            <div class="profile-photo-overlay"></div>
+        </div>
+        <!-- Search box -->
+        <form class="templatemo-search-form" role="search">
+            <div class="input-group">
+                <button type="submit" class="fa fa-search"></button>
+                <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+            </div>
+        </form>
+        <div class="mobile-menu-icon">
+            <i class="fa fa-bars"></i>
+        </div>
+        <nav class="templatemo-left-nav">
+            <ul>
+                <li><a href="/travel/manage-index"><i class="fa fa-home fa-fw"></i>旅游信息</a></li>
+                <li><a href="/travel/manage-publish"><i class="fa fa-pencil fa-fw"></i>发表博客</a></li>
+                <li><a href="/travel/manage-blog"><i class="fa fa-history fa-fw"></i>浏览记录</a></li>
+                <li><a href="/travel/manage-prefer" class="active"><i class="fa fa-sliders fa-fw"></i>信息设置</a></li>
+                <li><a href="/travel/logout"><i class="fa fa-eject fa-fw"></i>注销</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- Main content -->
+    <div class="templatemo-content col-1 light-gray-bg">
+        <div class="templatemo-top-nav-container">
+<!--            <div class="row">-->
+<!--                <nav class="templatemo-top-nav col-lg-12 col-md-12">-->
+<!--                    <ul class="text-uppercase">-->
+<!--                        <li><a href="" class="active">Admin panel</a></li>-->
+<!--                        <li><a href="">Dashboard</a></li>-->
+<!--                        <li><a href="">Overview</a></li>-->
+<!--                        <li><a href="login.html">Sign in form</a></li>-->
+<!--                    </ul>-->
+<!--                </nav>-->
+<!--            </div>-->
+        </div>
+        <div class="templatemo-content-container">
+            <div class="templatemo-content-widget white-bg">
+                <h2 class="margin-bottom-10">个人信息设置</h2>
+                <br/>
+                <form action="/travel/uploadimg" class="templatemo-login-form" method="post" enctype="multipart/form-data">
+                    <div class="row form-group">
+                        <div class="col-lg-6 col-md-6 form-group">
+                            <label for="inputRealName">当前昵称</label>
+                            <input type="text" class="form-control" name="inputRealName"  id="inputRealName" th:value="${session.userNow.u_realname}">
+                        </div>
+                        <div class="col-lg-6 col-md-6 form-group">
+                            <label for="inputAutograph">个性签名</label>
+                            <input type="text" class="form-control" name="inputAutograph" id="inputAutograph" th:value="${session.userNow.u_autograph}">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-lg-6 col-md-6 form-group">
+                            <label for="inputTel">联系电话</label>
+                            <input type="text" class="form-control" name="inputTel" id="inputTel" th:value="${session.userNow.u_tel}">
+                        </div>
+                        <div class="col-lg-6 col-md-6 form-group">
+                            <label for="inputEmail">邮箱</label>
+                            <input type="email" class="form-control" name="inputEmail" id="inputEmail" th:value="${session.userNow.u_email}">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-lg-6 col-md-6 form-group">
+                            <label for="inputHomeTown">家乡</label>
+                            <input type="text" class="form-control" name="inputHomeTown" id="inputHomeTown" th:value="${session.userNow.u_hometown}">
+                        </div>
+                        <div class="col-lg-6 col-md-6 form-group">
+                            <label for="inputBirthday">生日</label>
+                            <input type="date" class="form-control" name="inputBirthday" id="inputBirthday" th:value="${#dates.format(session.userNow.u_birthday,'yyyy-MM-dd')}">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-lg-6 col-md-6 form-group">
+                            <label for="inputCurrentPassword">当前密码</label>
+                            <input type="password" class="form-control" id="inputCurrentPassword" placeholder="*******">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-lg-6 col-md-6 form-group">
+                            <label for="inputNewPassword">新密码</label>
+                            <input type="password" class="form-control" name="inputNewPassword" id="inputNewPassword">
+                        </div>
+                        <div class="col-lg-6 col-md-6 form-group">
+                            <label for="inputConfirmNewPassword">确认密码</label>
+                            <input type="password" class="form-control" name="inputConfirmNewPassword" id="inputConfirmNewPassword">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-lg-12">
+                            <label class="control-label templatemo-block">上传新的头像图片</label>
+                            <!-- <input type="file" name="fileToUpload" id="fileToUpload" class="margin-bottom-10"> -->
+                            <input type="file" name="fileToUpload" id="fileToUpload" class="filestyle" data-buttonName="btn-primary" data-buttonBefore="true" data-icon="false">
+                            <p>最大上传容量为 5 MB.</p>
+                        </div>
+                    </div>
+                    <div class="form-group text-left">
+                        <p th:text="${session.msg}" style="color: red;font-size: 20px"></p>
+                    </div>
+                    <div class="form-group text-right">
+                        <button type="submit" class="templatemo-blue-button">更 新</button>
+                        <button type="reset" class="templatemo-white-button">取 消</button>
+                    </div>
+                </form>
+            </div>
+            <footer class="text-right">
+                <p><a href="http://www.templatemo.com" target="_parent"></a></p>
+            </footer>
+        </div>
+    </div>
+</div>
+
+<!-- JS -->
+<script type="text/javascript" src="/manage/js/jquery-1.11.2.min.js"></script>        <!-- jQuery -->
+<script type="text/javascript" src="/manage/js/bootstrap-filestyle.min.js"></script>  <!-- http://markusslima.github.io/bootstrap-filestyle/ -->
+<script type="text/javascript" src="/manage/js/templatemo-script.js"></script>        <!-- Templatemo Script -->
+
+</body>
+</html>

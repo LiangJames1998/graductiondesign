@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>发表民族文化信息</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="templatemo">
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>
+    <link href="/manage/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/manage/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/manage/css/templatemo-style.css" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- Left column -->
+<div class="templatemo-flex-row">
+    <div class="templatemo-sidebar">
+        <header class="templatemo-site-header">
+            <!--            <div class="square"></div>-->
+            <h1 th:text="${session.adminNow.getM_realname()}+',您好！'">管理员首页</h1>
+        </header>
+        <div class="profile-photo-container">
+            <img th:src="${session.adminNow.getM_headimg()}" alt="Profile Photo" class="img-responsive">
+            <div class="profile-photo-overlay"></div>
+        </div>
+        <!-- Search box -->
+        <form class="templatemo-search-form" role="search">
+            <div class="input-group">
+                <button type="submit" class="fa fa-search"></button>
+                <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+            </div>
+        </form>
+        <div class="mobile-menu-icon">
+            <i class="fa fa-bars"></i>
+        </div>
+        <nav class="templatemo-left-nav">
+            <ul>
+                <li><a href="/travel/admin-index"><i class="fa fa-institution fa-fw"></i>公告信息管理</a></li>
+                <li><a href="/travel/admin-travel"><i class="fa fa-table fa-fw"></i>旅游信息管理</a></li>
+                <li><a href="/travel/admin-blog"><i class="fa fa-table fa-fw"></i>博客信息管理</a></li>
+                <li><a href="/travel/admin-publish" ><i class="fa fa-pencil fa-fw"></i>发布旅游景点信息</a></li>
+                <li><a href="/travel/admin-nation" ><i class="fa fa-pencil fa-fw"></i>发布民族文化信息</a></li>
+                <li><a href="/travel/admin-user"><i class="fa fa-users fa-fw"></i>用户管理</a></li>
+                <li><a href="/travel/admin-examine"><i class="fa fa-bookmark fa-fw"></i>审核博客</a></li>
+                <li><a href="/travel/admin-prefer" class="active"><i class="fa fa-pencil fa-fw"></i>修改管理员信息</a></li>
+                <li><a href="/travel/adminlogout"><i class="fa fa-eject fa-fw"></i>注销</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- Main content -->
+    <div class="templatemo-content col-1 light-gray-bg">
+        <div class="templatemo-top-nav-container">
+        </div>
+        <div class="templatemo-content-container">
+            <div class="templatemo-content-widget white-bg">
+                <h2 class="margin-bottom-10">管理员发布民族文化信息</h2>
+                <br/>
+                <form action="/travel/updataAdmin" class="templatemo-login-form" method="post" enctype="multipart/form-data">
+                    <div class="row form-group">
+                        <div class="col-lg-6 col-md-6 form-group">
+                            <label for="inputRealName">当前名称</label>
+                            <input type="text" class="form-control" name="inputRealName"  id="inputRealName" th:value="${session.adminNow.getM_realname()}">
+                        </div>
+
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-lg-6 col-md-6 form-group">
+                            <label for="inputNewPassword">新密码</label>
+                            <input type="password" class="form-control" name="inputNewPassword" id="inputNewPassword">
+                        </div>
+                        <div class="col-lg-6 col-md-6 form-group">
+                            <label for="inputConfirmNewPassword">确认密码</label>
+                            <input type="password" class="form-control" name="inputConfirmNewPassword" id="inputConfirmNewPassword">
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-lg-12">
+                            <label class="control-label templatemo-block">上传新头像</label>
+                            <!-- <input type="file" name="fileToUpload" id="fileToUpload" class="margin-bottom-10"> -->
+                            <input type="file" name="fileToUpload" class="filestyle" data-buttonName="btn-primary" data-buttonBefore="true" data-icon="false">
+                            <p>最大上传容量为 5 MB.</p>
+                        </div>
+
+                    </div>
+                    <div class="form-group text-left">
+                        <p th:text="${msg}" style="color: red;font-size: 20px"></p>
+                    </div>
+                    <div class="form-group text-right">
+                        <button type="submit" class="templatemo-blue-button">更改</button>
+                        <button type="reset" class="templatemo-white-button">重置</button>
+                    </div>
+                </form>
+            </div>
+            <footer class="text-right">
+                <p><a href="http://www.templatemo.com" target="_parent"></a></p>
+            </footer>
+        </div>
+    </div>
+</div>
+
+<!-- JS -->
+<script type="text/javascript" src="/manage/js/jquery-1.11.2.min.js"></script>        <!-- jQuery -->
+<script type="text/javascript" src="/manage/js/bootstrap-filestyle.min.js"></script>  <!-- http://markusslima.github.io/bootstrap-filestyle/ -->
+<script type="text/javascript" src="/manage/js/templatemo-script.js"></script>        <!-- Templatemo Script -->
+
+</body>
+</html>
